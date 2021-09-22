@@ -1,13 +1,16 @@
 /** @jsxImportSource theme-ui */
 
-import { Box, Flex, Heading } from "@theme-ui/components";
+
+import { Flex } from "@theme-ui/components";
+import Button from "../elements/Button";
 import { wrapperTitleScreen } from "../styles/storeAndThemes";
+import TitleText from "./animated/TitleTextAnimated";
 
 function TitleScreen() {
     return (
-      <Flex sx={wrapperTitleScreen}>
-          <Heading>Bootcamp simulator 2</Heading>
-          <button sx={{alignSelf: 'center'}}>start</button>
+      <Flex sx={wrapperTitleScreen}>          
+          <TitleText />
+          <Button btnContent={'Start'}/>
       </Flex>
     );
   }
