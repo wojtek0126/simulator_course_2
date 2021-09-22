@@ -22,7 +22,7 @@ export const theme: Theme = {
 // elements
 // containers and wrappers
 export const containerMainScreen: any = {
-    background: `url(${mobileBackgroundTitle})`, 
+    // background: `url(${mobileBackgroundTitle})`, 
     backgroundSize: 'cover', 
     backgroundRepeat: 'no-repeat',
     justifyContent: 'center',
