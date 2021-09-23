@@ -5,8 +5,7 @@ import Button from "../elements/Button";
 import { containerMainScreen, wrapperTitleScreen } from "../styles/storeAndThemes";
 import TitleText from "./animated/TitleTextAnimated";
 import { Stage, Layer } from 'react-konva';
-import {
-    Router,
+import {   
     Link
   } from "react-router-dom";
 import ColoredRect from "./animated/TitleBackground";
@@ -26,7 +25,7 @@ function TitleScreen() {
                 <Flex sx={containerMainScreen}>
                     <Flex sx={wrapperTitleScreen}>          
                         <TitleText />
-                            <Link to="/board">
+                            <Link to="/login">
                                 <Button btnContent={'Start'}/>
                             </Link> 
                     </Flex>
