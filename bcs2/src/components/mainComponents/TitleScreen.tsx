@@ -1,14 +1,14 @@
 /** @jsxImportSource theme-ui */
 import { Box, Flex } from "@theme-ui/components";
 import { Container } from "theme-ui";
-import Button from "../elements/Button";
-import { containerMainScreen, wrapperTitleScreen } from "../styles/storeAndThemes";
-import TitleText from "./animated/TitleTextAnimated";
+import { containerMainScreen, wrapperTitleScreen } from "../../styles/storeAndThemes";
 import { Stage, Layer } from 'react-konva';
 import {   
     Link
   } from "react-router-dom";
-import ColoredRect from "./animated/TitleBackground";
+import ColoredRect from "../animated/TitleBackground";
+import Button from "../elements/Button";
+import TitleText from "../animated/TitleTextAnimated";
 
 function TitleScreen() {
     return (<>
