@@ -5,12 +5,12 @@ import { containerLoginScreen, wrapperBtnExit } from "../../styles/storeAndTheme
 import PropsyButton from "../elements/PropsyButton";
 import PropsyContainer from "../elements/PropsyContainer";
 
-function ActionGoParty() {
+function PropsyExitWithLink({linkTo = '/home'}: any) {
     return (
       <PropsyContainer content={
         <Flex sx={containerLoginScreen}>
           <Flex sx={wrapperBtnExit}>
-            <Link to='/home'>
+            <Link to={linkTo}>
               <PropsyButton btnContent={'Exit'} />
             </Link>           
           </Flex>
@@ -19,4 +19,4 @@ function ActionGoParty() {
     );
   }
   
-  export default ActionGoParty;
+  export default PropsyExitWithLink;

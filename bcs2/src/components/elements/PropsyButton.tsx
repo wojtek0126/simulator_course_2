@@ -5,7 +5,7 @@ import { Box } from "@theme-ui/components";
 import "react-awesome-button/dist/styles.css";
 import React from "react";
 
-const Button = React.memo(function({btnContent}: any) {
+const PropsyButton = React.memo(function({btnContent}: any) {
     
 
     return (
@@ -16,4 +16,4 @@ const Button = React.memo(function({btnContent}: any) {
     );
   });
   
-  export default Button;
+  export default PropsyButton;

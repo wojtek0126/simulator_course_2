@@ -1,6 +1,4 @@
 import type { Theme } from 'theme-ui'
-import titleBackgroundImg from '../assets/titleScreenBackground.jpg';
-import mobileBackgroundTitle from '../assets/background1.png';
 
 
 // themes
@@ -13,21 +11,44 @@ export const theme: Theme = {
   colors: {
     textBlack: '#000',
     textWhite: '#fff',
-    background: '#fff',
+    boxBackground: 'rgb(31, 122, 122)',
+    containerBackround: '#fff',
     primary: '#33e',
-  },
-  
+    bodyBorder: '#000'
+  }  
 }
 
 // elements
 // containers and wrappers
 export const containerMainScreen: any = {
     // background: `url(${mobileBackgroundTitle})`, 
+    backgroundColor: 'boxBackground',
     backgroundSize: 'cover', 
     backgroundRepeat: 'no-repeat',
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',  
+    border: '1px solid',
+    margin: 2,
+    borderColor: 'bodyBorder',
+    boxShadow: '8px 8px 24px 0px rgba(66, 68, 90, 1)',
+    "@media (max-width: 780px)": { 
+        alignItems: 'flex-start'          
+     }  
+};
+
+export const containerLoginScreen: any = {
+    // background: `url(${mobileBackgroundTitle})`, 
+    backgroundColor: 'boxBackground',
+    backgroundSize: 'cover', 
+    backgroundRepeat: 'no-repeat',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    height: '100vh',  
+    border: '1px solid',
+    margin: 2,
+    borderColor: 'bodyBorder',
+    boxShadow: '8px 8px 24px 0px rgba(66, 68, 90, 1)',
     "@media (max-width: 780px)": { 
         alignItems: 'flex-start'          
      }  
@@ -42,7 +63,7 @@ export const wrapperTitleScreen: any = {
 
 export const wrapperTitleText: any = { 
     marginTop: 3,
-    fontFamily: '"Permanent Marker", cursive',
+    fontFamily: 'body',
     textAlign: 'center',
     // maxWidth: '80vw',
     justifyContent: 'center',
@@ -52,3 +73,9 @@ export const wrapperTitleText: any = {
         fontSize: '0.6em'          
      }  
 };
+
+export const wrapperBtnExit = {
+    justifyContent: 'flex-end',
+    alignItems: 'flex-start', 
+    width: '100%'       
+}
