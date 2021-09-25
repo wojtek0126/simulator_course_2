@@ -22,36 +22,56 @@ import ActionExamResult from './components/mainComponents/ActionExamResult';
 import ActionFinalProject from './components/mainComponents/ActionFinalProject';
 import ActionFinalResult from './components/mainComponents/ActionFinalResult';
 import ActionEnding from './components/mainComponents/ActionEnding';
+import firebase from 'firebase/compat';
 
 function App() {
-
-  return (  
-  <RecoilRoot> 
-    <ThemeProvider theme={theme}> 
-      <Router>
-        <Switch>
-          <Redirect exact from="/" to="/home" />        
+ 
+    let user = firebase.auth().currentUser; 
+    
+    if (user) {
+      return (
+        <RecoilRoot> 
+          <ThemeProvider theme={theme}> 
+            <Router>
+              <Switch>
+                <Route path="/home" component={TitleScreen} />
+                <Route path="/login" component={LoginScreen} />
+                <Redirect exact from="/" to="/home" /> 
+                <Route path="/info" component={PlayersBoard} />                        
+                <Route path="/welcome" component={WelcomeScreen} />
+                <Route path="/board" component={PlayersBoard} />
+                <Route path="/action" component={ActionMain} />
+                <Route path="/inventory" component={PlayerInventory} />
+                <Route path="/shop" component={Shop} />
+                <Route path="/event" component={ActionEvent} />
+                <Route path="/exam" component={ActionExam} />
+                <Route path="/skipped" component={ActionSkippedExam} />
+                <Route path="/extra" component={ActionExtraExam} />
+                <Route path="/result" component={ActionExamResult} />
+                <Route path="/final" component={ActionFinalProject} />
+                <Route path="/finalres" component={ActionFinalResult} />
+                <Route path="/ending" component={ActionEnding} />   
+              </Switch>
+            </Router>
+          </ThemeProvider>
+        </RecoilRoot> 
+     
+      )
+    }  
+     else {
+      return (
+        <RecoilRoot> 
+          <ThemeProvider theme={theme}> 
+          <Router>
+            <Switch>
               <Route path="/home" component={TitleScreen} />
-              <Route path="/info" component={PlayersBoard} />
               <Route path="/login" component={LoginScreen} />
-              <Route path="/welcome" component={WelcomeScreen} />
-              <Route path="/board" component={PlayersBoard} />
-              <Route path="/action" component={ActionMain} />
-              <Route path="/inventory" component={PlayerInventory} />
-              <Route path="/shop" component={Shop} />
-              <Route path="/event" component={ActionEvent} />
-              <Route path="/exam" component={ActionExam} />
-              <Route path="/skipped" component={ActionSkippedExam} />
-              <Route path="/extra" component={ActionExtraExam} />
-              <Route path="/result" component={ActionExamResult} />
-              <Route path="/final" component={ActionFinalProject} />
-              <Route path="/finalres" component={ActionFinalResult} />
-              <Route path="/ending" component={ActionEnding} />           
-          </Switch>
-      </Router>
-    </ThemeProvider>
-  </RecoilRoot> 
-  );
+            </Switch>
+          </Router>
+        </ThemeProvider>
+      </RecoilRoot>             
+        )
 }
+};
 
 export default App;

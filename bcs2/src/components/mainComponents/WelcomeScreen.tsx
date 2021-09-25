@@ -7,24 +7,27 @@ import PropsyBox from "../elements/atoms/PropsyBox";
 import PropsyMainContainer from "../elements/atoms/PropsyMainContainer";
 import { useEffect, useState } from "react";
 import { userNameInLS } from '../../recoil/recoil';
+import firebase from "firebase/compat";
+import LoginErrorScreen from "./LoginErrorScreen";
 
 function WelcomeScreen() {
-  const [state, setstate] = useState(() => localStorage.getItem('userName'));
+  let user = firebase.auth().currentUser; 
   const userRecoilName: any = useRecoilValue(userNameInLS);
 
-  useEffect(() => {
-   if (state === null) setstate(userRecoilName);
-  }, [state])
 
-
-    return (
-      <PropsyBodyContainer content={
-        <PropsyMainContainer content={<>
-          <PropsyBoxWithExitBtn /> 
-          <PropsyBox content={ <Heading>{`Hello ${userRecoilName}! Are you ready for the bootcamp?`}</Heading>} />         
-        </>} />      
-      } />
-    );
-  }
+if (user) {
+  return (
+    <PropsyBodyContainer content={
+      <PropsyMainContainer content={<>
+        <PropsyBoxWithExitBtn /> 
+        <PropsyBox content={ <Heading>{`Hello ${userRecoilName}! Are you ready for the bootcamp?`}</Heading>} />         
+      </>} />      
+    } />
+  );
+}
+else {
+  return <LoginErrorScreen />
+  } 
+};
   
   export default WelcomeScreen;

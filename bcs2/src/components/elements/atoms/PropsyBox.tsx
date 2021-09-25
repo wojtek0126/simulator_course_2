@@ -7,6 +7,7 @@ function PropsyBox({content, width = '40vw', height = '40vh', flexDirection = 'c
 
     return (
     <Flex sx={{ 
+        textAlign: 'center',
         margin: 'auto',
         justifyContent: 'center',
         alignItems: 'center',
