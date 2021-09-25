@@ -5,7 +5,7 @@ import "react-awesome-button/dist/styles.css";
 import React from "react";
 import PropsyButton from "./PropsyButton";
 
-function PropsyLinkButton({buttonContent, linkTo, margin = 2, onClick}: any) {    
+function PropsyLinkButton({buttonContent, linkTo, margin, onClick}: any) {    
 
     return (
         <Box sx={{margin: `${margin}`}}>

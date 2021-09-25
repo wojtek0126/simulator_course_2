@@ -37,10 +37,9 @@ const LoginScreen: any = React.memo(function() {
       <PropsyBodyContainer content={
         <PropsyMainContainer content={<>
           <PropsyBoxWithExitBtn />
-          <PropsyBox content={<>
-         
+          <PropsyBox content={<>         
           <Heading sx={{padding: 2}}>Please enter your name</Heading>
-          <PropsyInput onChange={handleChangeUserName} placeholder={'Mininum 3 and maximum 30 characters'}/>
+          <PropsyInput onChange={handleChangeUserName} placeholder={'Min 3 max 30 characters'}/>
             <PropsyButtonWrapper content={<>
               <PropsyLinkButton  onClick={signIn} linkTo={'welcome'} buttonContent={`Done`}/>
             </>} />          

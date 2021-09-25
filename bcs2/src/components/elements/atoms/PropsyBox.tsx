@@ -3,14 +3,24 @@ import "react-awesome-button/dist/styles.css";
 import React from "react";
 import { Flex } from "theme-ui";
 
-function PropsyBox({content, width, height, flexDirection = 'column' }: any) {   
+function PropsyBox({content,
+                    width,
+                    height,
+                    flexDirection = 'column',
+                    justifyContent = 'center',
+                    margin = 'auto',
+                    position = 'unset',
+                    top = 3
+                 }: any) {   
 
     return (
-    <Flex sx={{ 
+    <Flex sx={{
+        position: position,
+        top: `${top}`,
         textAlign: 'center',
-        margin: 'auto',
+        margin: `${margin}`,
         padding: 1,
-        justifyContent: 'center',
+        justifyContent: `${justifyContent}`,
         alignItems: 'center',
         flexDirection: flexDirection,
         backgroundColor: 'boxBackground', 

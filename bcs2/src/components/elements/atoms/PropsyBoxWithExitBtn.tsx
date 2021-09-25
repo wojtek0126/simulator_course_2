@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { Flex } from "theme-ui";
 import PropsyButton from "./PropsyButton";
 
-function PropsyBoxWithExitBtn({linkTo = '/home'}: any) {
+export async function signOut() {
+  await firebase.auth().signOut();
+  localStorage.removeItem('userName');
+ }
 
-  async function signOut() {
-    await firebase.auth().signOut();
-    localStorage.removeItem('userName');
-   }
+function PropsyBoxWithExitBtn({linkTo = 'home'}: any) {
 
     return (          
           <Flex sx={{
