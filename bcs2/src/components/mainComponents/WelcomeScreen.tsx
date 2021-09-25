@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 import { userNameInLS } from '../../recoil/recoil';
 import firebase from "firebase/compat";
 import LoginErrorScreen from "./LoginErrorScreen";
+import PropsyButton from "../elements/atoms/PropsyButton";
+import PropsyLinkButton from "../elements/atoms/PropsyLinkButton";
 
 function WelcomeScreen() {
   let user = firebase.auth().currentUser; 
@@ -20,7 +22,10 @@ if (user) {
     <PropsyBodyContainer content={
       <PropsyMainContainer content={<>
         <PropsyBoxWithExitBtn /> 
-        <PropsyBox content={ <Heading>{`Hello ${userRecoilName}! Are you ready for the bootcamp?`}</Heading>} />         
+        <PropsyBox content={<>
+           <Heading sx={{maxWidth: '100%', wordBreak: 'break-word'}}>{`Hello ${userRecoilName}! Are you ready for the bootcamp?`}</Heading>
+           <PropsyLinkButton buttonContent={`Let's go!`} linkTo={'board'} />  
+           </>} />  
       </>} />      
     } />
   );

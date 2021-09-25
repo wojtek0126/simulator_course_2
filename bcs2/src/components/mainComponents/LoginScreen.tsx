@@ -10,7 +10,7 @@ import PropsyInput from "../elements/atoms/PropsyInput";
 import PropsyMainContainer from "../elements/atoms/PropsyMainContainer";
 import PropsyLinkButton from "../elements/atoms/PropsyLinkButton";
 import { userNameAtom } from "../../recoil/recoil"
-import firebase from "firebase/compat";
+import { Heading } from "theme-ui";
 
 
 const LoginScreen: any = React.memo(function() {
@@ -22,10 +22,15 @@ const LoginScreen: any = React.memo(function() {
     setUserNameValue(event.target.value);  
   };
   
-  const signIn = async () => {      
-    await auth.signInAnonymously().catch(alert);
-    setUserName(userNameValue);    
-    localStorage.setItem('userName', userNameValue);      
+  const signIn = async () => {  
+    if (userNameValue.length < 2 || userNameValue.length > 30) {
+     return
+    }
+    else {
+      await auth.signInAnonymously().catch(alert);
+      setUserName(userNameValue);    
+      localStorage.setItem('userName', userNameValue);  
+    }          
 };
 
     return (
@@ -34,14 +39,11 @@ const LoginScreen: any = React.memo(function() {
           <PropsyBoxWithExitBtn />
           <PropsyBox content={<>
          
-          {/* <form onSubmit={signIn}>             */}
-          <PropsyInput onChange={handleChangeUserName} />
-          {/* <PropsyInput type={'password'} onChange={handleChangePassword} /> */}
+          <Heading sx={{padding: 2}}>Please enter your name</Heading>
+          <PropsyInput onChange={handleChangeUserName} placeholder={'Mininum 3 and maximum 30 characters'}/>
             <PropsyButtonWrapper content={<>
-              <PropsyLinkButton  onClick={signIn} linkTo={'welcome'} buttonContent={`Let's go`}/>
-              {/* <PropsyButton buttonContent={'+'}  /> */}
+              <PropsyLinkButton  onClick={signIn} linkTo={'welcome'} buttonContent={`Done`}/>
             </>} />          
-          {/* </form>   */}
           </>} />
         </>} />
       }/>      

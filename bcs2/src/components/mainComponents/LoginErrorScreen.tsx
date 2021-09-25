@@ -5,8 +5,11 @@ import PropsyBodyContainer from "../elements/atoms/PropsyBodyContainer";
 import PropsyBox from "../elements/atoms/PropsyBox";
 import PropsyMainContainer from "../elements/atoms/PropsyMainContainer";
 import { useEffect, useState } from "react";
+import firebase from "firebase/compat";
+import WelcomeScreen from "./WelcomeScreen";
 
 function LoginErrorScreen() {
+  let user = firebase.auth().currentUser; 
   const [loading, setLoading] = useState("Please wait...");
 
   useEffect(() => {
@@ -15,6 +18,10 @@ function LoginErrorScreen() {
     }, 2000);
   }, []);
 
+  if(user) {
+    return <WelcomeScreen />
+  }
+  else {
     return (
       <PropsyBodyContainer content={
         <PropsyMainContainer content={<>
@@ -23,6 +30,7 @@ function LoginErrorScreen() {
         </>} />      
       } />
     );
-  }
+  }   
+  };
   
   export default LoginErrorScreen;

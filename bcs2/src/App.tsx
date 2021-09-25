@@ -26,17 +26,17 @@ import firebase from 'firebase/compat';
 
 function App() {
  
-    let user = firebase.auth().currentUser; 
+    // let user = firebase.auth().currentUser; 
     
-    if (user) {
+    // if (user) {
       return (
         <RecoilRoot> 
           <ThemeProvider theme={theme}> 
             <Router>
               <Switch>
+              <Redirect exact from="/" to="/home" /> 
                 <Route path="/home" component={TitleScreen} />
-                <Route path="/login" component={LoginScreen} />
-                <Redirect exact from="/" to="/home" /> 
+                <Route path="/login" component={LoginScreen} />             
                 <Route path="/info" component={PlayersBoard} />                        
                 <Route path="/welcome" component={WelcomeScreen} />
                 <Route path="/board" component={PlayersBoard} />
@@ -51,6 +51,8 @@ function App() {
                 <Route path="/final" component={ActionFinalProject} />
                 <Route path="/finalres" component={ActionFinalResult} />
                 <Route path="/ending" component={ActionEnding} />   
+                <Route path="/home" component={TitleScreen} />
+              <Route path="/login" component={LoginScreen} />
               </Switch>
             </Router>
           </ThemeProvider>
@@ -58,20 +60,20 @@ function App() {
      
       )
     }  
-     else {
-      return (
-        <RecoilRoot> 
-          <ThemeProvider theme={theme}> 
-          <Router>
-            <Switch>
-              <Route path="/home" component={TitleScreen} />
-              <Route path="/login" component={LoginScreen} />
-            </Switch>
-          </Router>
-        </ThemeProvider>
-      </RecoilRoot>             
-        )
-}
-};
+    //  else {
+      // return (
+      //   <RecoilRoot> 
+      //     <ThemeProvider theme={theme}> 
+      //     <Router>
+      //       <Switch>
+      //         <Route path="/home" component={TitleScreen} />
+      //         <Route path="/login" component={LoginScreen} />
+      //       </Switch>
+      //     </Router>
+      //   </ThemeProvider>
+      // </RecoilRoot>             
+      //   )
+// }
+// };
 
 export default App;

@@ -3,12 +3,13 @@ import "react-awesome-button/dist/styles.css";
 import React from "react";
 import { Flex } from "theme-ui";
 
-function PropsyBox({content, width = '40vw', height = '40vh', flexDirection = 'column' }: any) {   
+function PropsyBox({content, width, height, flexDirection = 'column' }: any) {   
 
     return (
     <Flex sx={{ 
         textAlign: 'center',
         margin: 'auto',
+        padding: 1,
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: flexDirection,
