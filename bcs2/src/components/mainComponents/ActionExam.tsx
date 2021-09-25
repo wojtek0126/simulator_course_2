@@ -1,21 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 /** @jsxImportSource theme-ui */
-import { Link } from "react-router-dom";
-import PropsyButton from '../elements/PropsyButton';
 import { containerLoginScreen, wrapperBtnExit } from '../../styles/storeAndThemes';
 import { Flex } from 'theme-ui';
-import PropsyContainer from '../elements/PropsyContainer';
-import PropsyExitWithLink from '../elements/PropsyExitWithLink';
+import PropsyBodyContainer from '../elements/atoms/PropsyBodyContainer';
+import PropsyBoxWithExitBtn from '../elements/atoms/PropsyBoxWithExitBtn';
 
 function ActionExam() {
-  return (
-    <PropsyContainer content={
-      <Flex sx={containerLoginScreen}>
-         <PropsyExitWithLink />
-      </Flex>
-    } />
-  );
-}
+    return (
+      <PropsyBodyContainer content={
+        <Flex sx={containerLoginScreen}>
+         <PropsyBoxWithExitBtn />
+        </Flex>
+      } />
+    );
+  }
 
 export default ActionExam;

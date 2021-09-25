@@ -13,6 +13,7 @@ export const theme: Theme = {
     textWhite: '#fff',
     boxBackground: 'rgb(31, 122, 122)',
     containerBackround: '#fff',
+    inputBackground: '#000',
     primary: '#33e',
     bodyBorder: '#000'
   }  

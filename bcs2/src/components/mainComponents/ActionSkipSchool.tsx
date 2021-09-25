@@ -1,20 +1,15 @@
 /** @jsxImportSource theme-ui */
-import { Link } from "react-router-dom";
 import { Flex } from "theme-ui";
-import { containerLoginScreen, wrapperBtnExit } from "../../styles/storeAndThemes";
-import PropsyButton from "../elements/PropsyButton";
-import PropsyContainer from "../elements/PropsyContainer";
+import { containerLoginScreen } from "../../styles/storeAndThemes";
+import PropsyBodyContainer from "../elements/atoms/PropsyBodyContainer";
+import PropsyBoxWithExitBtn from "../elements/atoms/PropsyBoxWithExitBtn";
 
 function ActionSkipSchool
 () {
     return (
-      <PropsyContainer content={
+      <PropsyBodyContainer content={
         <Flex sx={containerLoginScreen}>
-          <Flex sx={wrapperBtnExit}>
-            <Link to='/home'>
-              <PropsyButton btnContent={'Exit'} />
-            </Link>           
-          </Flex>
+         <PropsyBoxWithExitBtn />
         </Flex>
       } />
     );

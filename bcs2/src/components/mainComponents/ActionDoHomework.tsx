@@ -1,14 +1,14 @@
 /** @jsxImportSource theme-ui */
 import { Flex } from "theme-ui";
 import { containerLoginScreen } from "../../styles/storeAndThemes";
-import PropsyContainer from "../elements/PropsyContainer";
-import PropsyExitWithLink from "../elements/PropsyExitWithLink";
+import PropsyBodyContainer from "../elements/atoms/PropsyBodyContainer";
+import PropsyBoxWithExitBtn from "../elements/atoms/PropsyBoxWithExitBtn";
 
 function ActionDoHomework() {
     return (
-      <PropsyContainer content={
+      <PropsyBodyContainer content={
         <Flex sx={containerLoginScreen}>
-         <PropsyExitWithLink />
+         <PropsyBoxWithExitBtn />
         </Flex>
       } />
     );
