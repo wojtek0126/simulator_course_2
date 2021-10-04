@@ -1,2 +1,4 @@
 # simulator_course_2
 Upgrade of messy PCS
+
+I have some really nice turn and decision based game made with React. But It was back when my skills were well..smaller. And that code is just outrageous. Now I want to revive it and this time to make it available for the people. Game loosely simulates Python Bootcamp for beginner who wants to get a job right afterwards. And yes, this is also possible in real life still. Plan was to use Solid.js however due to lack of libs I decided to give it a go with React. Using firebase for backend. Of course I feel lost without TypeScript, so it is used here as well. It is under construction.
