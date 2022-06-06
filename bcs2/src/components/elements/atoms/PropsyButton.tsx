@@ -12,7 +12,7 @@ function PropsyButton({buttonContent, buttonAlign = 'center', style = "primary",
             margin: 2,
             justifyContent: `${buttonAlign}`}}>
             <Button sx={{display: 'contents'}} type={type} disabled={disabled}
-            ><AwesomeButton type={style} onPress={onClick}>{buttonContent}</AwesomeButton>
+            ><AwesomeButton  type={style} onPress={onClick}>{buttonContent}</AwesomeButton>
             </Button>
         </Flex>
         

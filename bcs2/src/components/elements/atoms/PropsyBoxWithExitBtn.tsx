@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import firebase from "firebase/compat";
+import firebase from "firebase/compat/app";
 import { Link } from "react-router-dom";
 import { Flex } from "theme-ui";
 import PropsyButton from "./PropsyButton";

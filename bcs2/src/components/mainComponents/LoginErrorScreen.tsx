@@ -5,7 +5,7 @@ import PropsyBodyContainer from "../elements/atoms/PropsyBodyContainer";
 import PropsyBox from "../elements/atoms/PropsyBox";
 import PropsyMainContainer from "../elements/atoms/PropsyMainContainer";
 import { useEffect, useState } from "react";
-import firebase from "firebase/compat";
+import firebase from "firebase/compat/app";
 import WelcomeScreen from "./WelcomeScreen";
 
 function LoginErrorScreen() {

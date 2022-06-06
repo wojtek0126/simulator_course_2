@@ -7,7 +7,7 @@ import PropsyBox from "../elements/atoms/PropsyBox";
 import PropsyMainContainer from "../elements/atoms/PropsyMainContainer";
 import { useEffect, useState } from "react";
 import { userNameInLS } from '../../recoil/recoil';
-import firebase from "firebase/compat";
+import firebase from "firebase/compat/app";
 import LoginErrorScreen from "./LoginErrorScreen";
 import PropsyButton from "../elements/atoms/PropsyButton";
 import PropsyLinkButton from "../elements/atoms/PropsyLinkButton";
